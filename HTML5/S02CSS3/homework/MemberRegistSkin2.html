@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    td {
+        height: 40px;
+        vertical-align: middle;
+        border: 1px solid #dadada;
+        padding: 0px 15px;
+    }
+</style>
+<body>
+    <section>
+        <h1>회원가입 페이지</h1>
+    </section>
+    <section>
+        <fieldset style="width: 80%;">
+            <table border : solid 0.5px;>
+                <tr>
+                    <td bgcolor="gray"><span style="color: red;">*</span> 아이디</td>
+                    <td><input type="text" name="user_ID" placeholder="아이디 입력"><input type="button" name="user_IDcheck" value="중복확인"></td>
+                </tr>
+                <tr>
+                    <td bgcolor="gray"><span style="color: red;">*</span> 비밀번호</td>
+                    <td colspan="2"><input type="password" name="user_PW1" value="123456"></td>
+                </tr>
+                <tr>
+                    <td bgcolor="gray"><span style="color: red;">*</span> 비밀번호 확인</td>
+                    <td colspan="2"><input type="password" name="user_PW2" value="123456">
+                    (확인을 위해 다시 입력해 주세요.)</td>
+                </tr>
+                <tr>
+                    <td bgcolor="gray"><span style="color: red;">*</span> 이름</td>
+                    <td colspan="2"><input type="text" name="user_name" value=""></td>
+                </tr>
+                <tr>
+                    <td bgcolor="gray">생년월일</td>
+                    <td>
+                        <input type="radio" name="gender" value="m" id="man"/>남자
+                        <input type="radio" name="gender" value="f" id="woman"/>여자
+                        <input type="number" style="text-align: right; width:60px; height:15px;" >년
+                        <input type="number" style="text-align: right; width:60px; height:15px;">월
+                        <input type="number" style="text-align: right; width:60px; height:15px;">일    (예, 2000년 01월 31일)
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td bgcolor="gray" rowspan="2"><span style="color: red;">*</span> 이메일</td>
+                    <td>
+                        <input type="text" name="mailid">
+                        <span>@</span>
+                        <input type="text" name="email" placeholder="gmail.com">
+                        <select name="mailslc">
+                            <option value="self" selected>직접입력</option>
+                            <option value="naver">naver.com</option>
+                            <option value="gm">gmail.com</option>
+                            <option value="da">daum.com</option>
+                            <option value="yah">yahoo.com</option>
+                        </select>
+                        <input type="radio" name="email" value="true"/>수신허용
+                        <input type="radio" name="email" value="false"/>수신불가
+                    </td>
+                <tr>
+                    <td>
+                      <span style="font-size: 14px; color: #3d3c3c;">* hanmail.net은 메일수신이 어려울 수 있으니 가급적 다른메일을 이용하시기 바랍니다.</span>
+                    </td>
+                </tr>
+                </tr>
+                <tr>
+                    <td bgcolor="gray" rowspan="3"> 주소</td>
+                    <td>
+                        <input type="button" name="user_add" value="주소찾기"><input type="text"  name="user_add" style="text-align: right;">(우편번호)
+                    </td>
+                <tr>
+                    <td>
+                        <input type="text"  name="user_add" style="text-align: right; width :800px">
+                    </td>
+                </tr>        
+                <tr>
+                    <td>
+                        <input type="text"  name="user_add" style="text-align: right; width :700px">+ 나머지 주소
+                    </td>
+                </tr>        
+                </tr>
+                <tr>
+                    <td bgcolor="gray"> 전화번호</td>
+                    <td>
+                        <input type="number"  name="user_phone" style="text-align: right; width:60px; height:15px;"> -
+                        <input type="number"  name="user_phone" style="text-align: right; width:80px; height:15px;"> -
+                        <input type="number"  name="user_phone" style="text-align: right; width:80px; height:15px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="gray"><span style="color: red;">*</span> 휴대전화</td>
+                    <td>
+                        <input type="number"  name="user_phone" style="text-align: right; width:60px; height:15px;"> -
+                        <input type="number"  name="user_phone" style="text-align: right; width:80px; height:15px;"> -
+                        <input type="number"  name="user_phone" style="text-align: right; width:80px; height:15px;">
+                        <input type="radio" name="SMS" value="true"/>SMS 수신허용
+                        <input type="radio" name="SMS" value="false"/>SMS 수신불가
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="gray"><span style="color: red;">*</span> 관심분야</td>
+                    <td colspan="2">
+                        <select name="hb">
+                            <option value="cho" selected>:: 관심분야 선택 ::</option>
+                            <option value="spo">운동</option>
+                            <option value="gam">게임</option>
+                            <option value="bk">독서</option>
+                            <option value="mov">영화감상</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="gray"><span style="color: red;">*</span> 가입경로</td>
+                    <td colspan="2">
+                        <select name="rot">
+                            <option value="cho" selected>:: 가입경로 선택 ::</option>
+                            <option value="spo">운동</option>
+                            <option value="gam">게임</option>
+                            <option value="bk">독서</option>
+                            <option value="mov">영화감상</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <div style="text-align: center;">
+                <input type="button" style="color: white; background-color: red;" value="등록하기">
+                <input type="button" style="color: white; background-color: rgb(49, 48, 48);" value="새로 쓰기">
+            </div>
+        </fieldset>
+    </section>
+</body>
+
+</html>

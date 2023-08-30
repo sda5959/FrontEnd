@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script>
+            $(function(){
+                $.ajaxSetup({
+                    url : "./common/04JSONData.json",
+                    dataType : "json"
+                });
+                $('#btn').click(function(){
+                    $.ajax({
+                        success : function(responseData){
+                            $.each(responseData, function(index,value){
+                                console.log(index, value);
+
+                                var htmlStr = "<tr>";
+                                htmlStr += " <td>"+(index+1)+"</td>";
+                                htmlStr += " <td>"+value.name+"</td>";
+                                htmlStr += " <td>"+value["age"]+"</td>";
+                                htmlStr += " <td>"+value["주소"]+"</td>";
+                                htmlStr += "   </tr>";
+
+                                $('#tbl1').append(htmlStr);
+                            });
+                        },
+                        error:errFunc
+                    });
+                });
+            });
+            function errFunc(errData){
+                alert("실패:"+errData.status+":"+errData.statusText);
+            }
+        </script>
+    </head>
+    <body>
+    <div class="container">
+        <h2>$.ajaxSetup() 메소드 사용</h2>
+
+        <table border="1" id="tbl1">
+            <tr>
+                <td>NO</td>
+                <td>이름</td>
+                <td>나이</td>
+                <td>출신지역</td>
+            </tr>
+        </table>
+        <button id="btn">JSON데이터 가져오기</button>
+    </div>
+    </body>
+</html>
